@@ -11,7 +11,7 @@
 
 @interface XWBannerModel:NSObject
 
-@property (nonatomic, copy) NSString * imgPath;
+@property (nonatomic, copy) NSURL * imgURL;
 @property (nonatomic, copy) NSString * imgName;
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSString * link;

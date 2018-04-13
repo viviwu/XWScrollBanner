@@ -20,6 +20,7 @@
 		4FAAFB3E207EEE8800676796 /* banner_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB3D207EEE8700676796 /* banner_0.png */; };
 		4FAAFB40207EEED800676796 /* banner_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB3F207EEED800676796 /* banner_2.png */; };
 		4FAAFB42207EEEDE00676796 /* banner_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB41207EEEDE00676796 /* banner_1.png */; };
+		DC3FD15FED4086139785A750 /* libPods-XWScrollBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 690C648C569EBEA09DCD39FB /* libPods-XWScrollBanner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,9 @@
 		4FAAFB3D207EEE8700676796 /* banner_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_0.png; sourceTree = "<group>"; };
 		4FAAFB3F207EEED800676796 /* banner_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_2.png; sourceTree = "<group>"; };
 		4FAAFB41207EEEDE00676796 /* banner_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_1.png; sourceTree = "<group>"; };
+		5DE9AA25F066704F2C3EEA5F /* Pods-XWScrollBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWScrollBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWScrollBanner/Pods-XWScrollBanner.release.xcconfig"; sourceTree = "<group>"; };
+		690C648C569EBEA09DCD39FB /* libPods-XWScrollBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWScrollBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E83BACC7B386EF10A8DA758D /* Pods-XWScrollBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWScrollBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWScrollBanner/Pods-XWScrollBanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3FD15FED4086139785A750 /* libPods-XWScrollBanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +102,8 @@
 				0DB2EDE7207E522200A12297 /* XWScrollBannerTests */,
 				0DB2EDF2207E522200A12297 /* XWScrollBannerUITests */,
 				0DB2EDCD207E522200A12297 /* Products */,
+				44A5A5BA363C78719F420ED3 /* Pods */,
+				AD15F119C48DF018E7466D86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +155,15 @@
 			path = XWScrollBannerUITests;
 			sourceTree = "<group>";
 		};
+		44A5A5BA363C78719F420ED3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E83BACC7B386EF10A8DA758D /* Pods-XWScrollBanner.debug.xcconfig */,
+				5DE9AA25F066704F2C3EEA5F /* Pods-XWScrollBanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4F55F7BC208041ED00A03878 /* XWScrollBanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,14 @@
 			path = XWScrollBanner;
 			sourceTree = "<group>";
 		};
+		AD15F119C48DF018E7466D86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				690C648C569EBEA09DCD39FB /* libPods-XWScrollBanner.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB2EDF8207E522200A12297 /* Build configuration list for PBXNativeTarget "XWScrollBanner" */;
 			buildPhases = (
+				A2FAE26ACCB1002048990CFD /* [CP] Check Pods Manifest.lock */,
 				0DB2EDC8207E522200A12297 /* Sources */,
 				0DB2EDC9207E522200A12297 /* Frameworks */,
 				0DB2EDCA207E522200A12297 /* Resources */,
@@ -289,6 +314,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A2FAE26ACCB1002048990CFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XWScrollBanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DB2EDC8207E522200A12297 /* Sources */ = {
@@ -460,6 +506,7 @@
 		};
 		0DB2EDF9207E522200A12297 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E83BACC7B386EF10A8DA758D /* Pods-XWScrollBanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,6 +522,7 @@
 		};
 		0DB2EDFA207E522200A12297 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DE9AA25F066704F2C3EEA5F /* Pods-XWScrollBanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
