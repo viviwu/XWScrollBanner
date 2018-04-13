@@ -9,14 +9,48 @@
 #import "ViewController.h"
 #import "XWScrollBanner.h"
 
+#import "XWFilterView.h"
+
 @interface ViewController ()
 {
     XWScrollBanner * scroll;
 }
 @property (weak, nonatomic) IBOutlet XWScrollBanner *sBanner;
+@property (strong, nonatomic) XWFilterView * filter;
+
 @end
 
 @implementation ViewController
+
+- (IBAction)filter:(UIButton*)sender {
+    if (nil==_filter) {
+//        NSArray * arr = @[@[@"按区间收益", @"按夏普比率"], @[@"不限", @"自主发行", @"公墓专户", @"券商资管", @"期货资管"], @[@"不限", @"自主发行", @"公墓专户", @"券商资管", @"期货资管"]];
+        
+        NSMutableArray * dataSource = [NSMutableArray array];
+        for (int i=0; i<7; i++) {
+            NSMutableArray * sectionSource = [NSMutableArray array];
+            for (int k=0; k<arc4random()%4+3; k++) {
+                XWFilter * filter = [[XWFilter alloc]init];
+                filter.title = [NSString stringWithFormat:@"(%d,%d)", i, k];
+                filter.sectionTitle = [NSString stringWithFormat:@"Section-%d", i];
+                [sectionSource addObject:filter];
+            }
+            [dataSource addObject:sectionSource];
+        }
+        
+        CGFloat bottomY = sender.frame.origin.y+ sender.frame.size.height;
+        _filter =[[XWFilterView alloc]initWithFrame:CGRectMake(0,bottomY, self.view.frame.size.width, self.view.frame.size.height - bottomY-33.0) dataSource:dataSource];
+        _filter.selectHandle = ^(NSIndexPath * indexPath, NSString  * title){
+            NSLog(@"%@",title);
+        };
+        _filter.multiResulter = ^(NSArray * results){
+            for (XWFilter * model in results) {
+                NSLog(@"results:%@", model.title);
+            }
+        };
+    }
+    [self.view addSubview:_filter];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -16,8 +16,8 @@
 
 @interface XWBanner ()
 
-@property (nonatomic, strong)UIImageView * imgView;
-@property (nonatomic, strong)UILabel * titlelabel;
+@property (nonatomic, strong) UIImageView * imgView;
+@property (nonatomic, strong) UILabel * titlelabel;
 
 @end
 

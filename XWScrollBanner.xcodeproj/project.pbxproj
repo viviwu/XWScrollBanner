@@ -17,6 +17,8 @@
 		0DB2EDF4207E522200A12297 /* XWScrollBannerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2EDF3207E522200A12297 /* XWScrollBannerUITests.m */; };
 		0DB2EE06207E52A000A12297 /* XWScrollBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2EE05207E52A000A12297 /* XWScrollBanner.m */; };
 		0DB2EE09207E57BA00A12297 /* XWBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2EE08207E57BA00A12297 /* XWBanner.m */; };
+		4F55F7D5208092B700A03878 /* XWFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F7D4208092B700A03878 /* XWFilterView.m */; };
+		4F55F7D82080938000A03878 /* XWFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F7D72080938000A03878 /* XWFilterCell.m */; };
 		4FAAFB3E207EEE8800676796 /* banner_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB3D207EEE8700676796 /* banner_0.png */; };
 		4FAAFB40207EEED800676796 /* banner_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB3F207EEED800676796 /* banner_2.png */; };
 		4FAAFB42207EEEDE00676796 /* banner_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB41207EEEDE00676796 /* banner_1.png */; };
@@ -61,6 +63,10 @@
 		0DB2EE05207E52A000A12297 /* XWScrollBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWScrollBanner.m; sourceTree = "<group>"; };
 		0DB2EE07207E57BA00A12297 /* XWBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWBanner.h; sourceTree = "<group>"; };
 		0DB2EE08207E57BA00A12297 /* XWBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWBanner.m; sourceTree = "<group>"; };
+		4F55F7D3208092B700A03878 /* XWFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWFilterView.h; sourceTree = "<group>"; };
+		4F55F7D4208092B700A03878 /* XWFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWFilterView.m; sourceTree = "<group>"; };
+		4F55F7D62080938000A03878 /* XWFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWFilterCell.h; sourceTree = "<group>"; };
+		4F55F7D72080938000A03878 /* XWFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWFilterCell.m; sourceTree = "<group>"; };
 		4FAAFB3D207EEE8700676796 /* banner_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_0.png; sourceTree = "<group>"; };
 		4FAAFB3F207EEED800676796 /* banner_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_2.png; sourceTree = "<group>"; };
 		4FAAFB41207EEEDE00676796 /* banner_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_1.png; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 				0DB2EDD0207E522200A12297 /* AppDelegate.m */,
 				0DB2EDD2207E522200A12297 /* ViewController.h */,
 				0DB2EDD3207E522200A12297 /* ViewController.m */,
+				4F55F7D92080BD4C00A03878 /* XWFilterView */,
 				4F55F7BC208041ED00A03878 /* XWScrollBanner */,
 				0DB2EDD5207E522200A12297 /* Main.storyboard */,
 				0DB2EDD8207E522200A12297 /* Assets.xcassets */,
@@ -173,6 +180,17 @@
 				0DB2EE08207E57BA00A12297 /* XWBanner.m */,
 			);
 			path = XWScrollBanner;
+			sourceTree = "<group>";
+		};
+		4F55F7D92080BD4C00A03878 /* XWFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				4F55F7D3208092B700A03878 /* XWFilterView.h */,
+				4F55F7D4208092B700A03878 /* XWFilterView.m */,
+				4F55F7D62080938000A03878 /* XWFilterCell.h */,
+				4F55F7D72080938000A03878 /* XWFilterCell.m */,
+			);
+			path = XWFilterView;
 			sourceTree = "<group>";
 		};
 		AD15F119C48DF018E7466D86 /* Frameworks */ = {
@@ -246,7 +264,7 @@
 		0DB2EDC4207E522200A12297 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "vivi wu";
 				TargetAttributes = {
 					0DB2EDCB207E522200A12297 = {
@@ -342,10 +360,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB2EDD4207E522200A12297 /* ViewController.m in Sources */,
+				4F55F7D82080938000A03878 /* XWFilterCell.m in Sources */,
 				0DB2EDDF207E522200A12297 /* main.m in Sources */,
 				0DB2EDD1207E522200A12297 /* AppDelegate.m in Sources */,
 				0DB2EE09207E57BA00A12297 /* XWBanner.m in Sources */,
 				0DB2EE06207E52A000A12297 /* XWScrollBanner.m in Sources */,
+				4F55F7D5208092B700A03878 /* XWFilterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +434,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -421,6 +442,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -469,6 +491,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -476,6 +499,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

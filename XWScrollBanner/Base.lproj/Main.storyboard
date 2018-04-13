@@ -25,12 +25,27 @@
                                     <constraint firstAttribute="height" constant="200" id="zg9-wm-Cyu"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTc-q5-oNS">
+                                <rect key="frame" x="0.0" y="264" width="121" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.51154054370000002" blue="0.10409559090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="HhT-6b-2jd"/>
+                                    <constraint firstAttribute="height" constant="30" id="OAT-NQ-dqm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="下拉多选"/>
+                                <connections>
+                                    <action selector="filter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bk-sB-aui"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EQI-Lp-kz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1rC-3b-f6g"/>
                             <constraint firstItem="EQI-Lp-kz1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2F5-rP-EIL"/>
                             <constraint firstItem="EQI-Lp-kz1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6D1-on-oeQ"/>
+                            <constraint firstItem="cTc-q5-oNS" firstAttribute="top" secondItem="EQI-Lp-kz1" secondAttribute="bottom" id="nm5-Nm-ZCu"/>
+                            <constraint firstItem="cTc-q5-oNS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pg5-TV-Elc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
