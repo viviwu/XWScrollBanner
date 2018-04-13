@@ -117,10 +117,7 @@
 				0DB2EDD0207E522200A12297 /* AppDelegate.m */,
 				0DB2EDD2207E522200A12297 /* ViewController.h */,
 				0DB2EDD3207E522200A12297 /* ViewController.m */,
-				0DB2EE04207E52A000A12297 /* XWScrollBanner.h */,
-				0DB2EE05207E52A000A12297 /* XWScrollBanner.m */,
-				0DB2EE07207E57BA00A12297 /* XWBanner.h */,
-				0DB2EE08207E57BA00A12297 /* XWBanner.m */,
+				4F55F7BC208041ED00A03878 /* XWScrollBanner */,
 				0DB2EDD5207E522200A12297 /* Main.storyboard */,
 				0DB2EDD8207E522200A12297 /* Assets.xcassets */,
 				4FAAFB3D207EEE8700676796 /* banner_0.png */,
@@ -149,6 +146,17 @@
 				0DB2EDF5207E522200A12297 /* Info.plist */,
 			);
 			path = XWScrollBannerUITests;
+			sourceTree = "<group>";
+		};
+		4F55F7BC208041ED00A03878 /* XWScrollBanner */ = {
+			isa = PBXGroup;
+			children = (
+				0DB2EE04207E52A000A12297 /* XWScrollBanner.h */,
+				0DB2EE05207E52A000A12297 /* XWScrollBanner.m */,
+				0DB2EE07207E57BA00A12297 /* XWBanner.h */,
+				0DB2EE08207E57BA00A12297 /* XWBanner.m */,
+			);
+			path = XWScrollBanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
