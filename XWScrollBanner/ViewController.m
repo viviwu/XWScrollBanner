@@ -11,18 +11,31 @@
 
 #import "XWFilterView.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     XWScrollBanner * scroll;
 }
+@property (weak, nonatomic) IBOutlet UIView *header;
 @property (weak, nonatomic) IBOutlet XWScrollBanner *sBanner;
 @property (strong, nonatomic) XWFilterView * filter;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation ViewController
 
 - (IBAction)filter:(UIButton*)sender {
+    CGFloat safeBottom = 0;
+    if (@available(iOS 11.0, *)) {
+        safeBottom = self.view.safeAreaInsets.bottom;
+        NSLog(@"safeBottom==%f", safeBottom);
+        NSLog(@"%f", self.view.safeAreaInsets.left + self.view.safeAreaInsets.right);
+    } else {
+        // Fallback on earlier versions
+    }
+    NSLog(@"self.tableView.contentOffset.y==%f", self.tableView.contentOffset.y);
+    CGFloat startY = 230.0-self.tableView.contentOffset.y;
+    
     if (nil==_filter) {
 //        NSArray * arr = @[@[@"按区间收益", @"按夏普比率"], @[@"不限", @"自主发行", @"公墓专户", @"券商资管", @"期货资管"], @[@"不限", @"自主发行", @"公墓专户", @"券商资管", @"期货资管"]];
         
@@ -38,8 +51,7 @@
             [dataSource addObject:sectionSource];
         }
         
-        CGFloat bottomY = sender.frame.origin.y+ sender.frame.size.height;
-        _filter =[[XWFilterView alloc]initWithFrame:CGRectMake(0,bottomY, self.view.frame.size.width, self.view.frame.size.height - bottomY-33.0) dataSource:dataSource];
+        _filter =[[XWFilterView alloc]initWithFrame:CGRectMake(0, startY, self.view.frame.size.width, self.view.frame.size.height - startY- safeBottom) dataSource:dataSource];
         _filter.selectHandle = ^(NSIndexPath * indexPath, NSString  * title){
             NSLog(@"%@",title);
         };
@@ -49,11 +61,13 @@
             }
         };
     }
+    [_filter setFrame:CGRectMake(0, startY, self.view.frame.size.width, self.view.frame.size.height - startY- safeBottom)];
     [self.view addSubview:_filter];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.tableHeaderView = self.header;
     
     NSArray * models =@[
     @{
@@ -129,6 +143,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
 }
 
 

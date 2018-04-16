@@ -107,6 +107,15 @@
     return _confirmBtn;
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [_collectionView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-40.0)];
+    [_confirmBtn.superview setFrame:CGRectMake(0, self.frame.size.height-40.0, self.bounds.size.width, 40.0)];
+    [_confirmBtn  setFrame:CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width/2, 40.0)];
+    [_resetBtn setFrame:CGRectMake(0, 0, self.bounds.size.width/2, 40.0)];
+}
+
 - (void)reset{
     for (id obj in self.dataSource) {
         if ([obj isKindOfClass:[NSArray class]]) {
