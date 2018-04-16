@@ -175,13 +175,8 @@
 }
 
 - (void)setFrame:(CGRect)frame
-{
     [super setFrame:frame];
     [self.collectionView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-40.0)];
-    [_resetBtn.superview setFrame:CGRectMake(0, self.frame.size.height-40.0, self.bounds.size.width, 40.0)];
-    [_resetBtn setFrame:CGRectMake(0, 0, self.bounds.size.width/2, 40.0)];
-    [_confirmBtn setFrame:CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width/2, 40.0)];
-}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.
