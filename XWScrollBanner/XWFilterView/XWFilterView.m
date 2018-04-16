@@ -108,8 +108,23 @@
 }
 
 - (void)reset{
-    
+    for (id obj in self.dataSource) {
+        if ([obj isKindOfClass:[NSArray class]]) {
+            NSArray * arr = obj;
+            NSAssert([arr[0] isKindOfClass:[XWFilter class]], @"obj isNotKindOfClass XWFilter!!!");
+            for (XWFilter * model in arr) {
+                model.selected = NO;
+            }
+        }else if([obj isKindOfClass:[XWFilter class]]){
+            XWFilter * model = obj;
+            model.selected = NO;
+        }else{
+            //
+        }
+    }
+    [self.collectionView reloadData];
 }
+
 - (void)confirm{
     [self removeFromSuperview];
     NSMutableArray * results = [NSMutableArray array];
@@ -133,7 +148,7 @@
     }
     if (self.multiResulter) {
         self.multiResulter(results);
-    } 
+    }
 }
 
 - (void)setDataSource:(NSArray *)dataSource
@@ -149,13 +164,22 @@
     [self.collectionView setCollectionViewLayout:self.layout];
     [self.collectionView reloadData];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [self.collectionView setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-40.0)];
+    [_resetBtn.superview setFrame:CGRectMake(0, self.frame.size.height-40.0, self.bounds.size.width, 40.0)];
+    [_resetBtn setFrame:CGRectMake(0, 0, self.bounds.size.width/2, 40.0)];
+    [_confirmBtn setFrame:CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width/2, 40.0)];
 }
-*/
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
